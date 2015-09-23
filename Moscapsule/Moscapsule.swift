@@ -244,8 +244,8 @@ public class MQTTConfig {
         mqttReconnOpts = MQTTReconnOpts()
     }
 }
-
-public final class __MosquittoContext {
+@objc(__MosquittoContext)
+public final class __MosquittoContext : NSObject{
     public var mosquittoHandler: COpaquePointer = nil
     public var isConnected: Bool = false
     public var onConnectCallback: ((returnCode: Int) -> ())!
@@ -255,7 +255,7 @@ public final class __MosquittoContext {
     public var onSubscribeCallback: ((messageId: Int, qosCount: Int, grantedQos: UnsafePointer<Int32>) -> ())!
     public var onUnsubscribeCallback: ((messageId: Int) -> ())!
     public var keyfile_passwd: String = ""
-    internal init(){}
+    internal override init(){}
 }
 
 public final class MQTTMessage {
